@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      main {
+        width: 100%;
+        height: 100vh;
+        background-color: #f1b4bb;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: relative;
+      }
+      /*  ************************* SPAN ******************** */
+      main > span:nth-of-type(1) {
+        position: fixed;
+        right: 20px;
+        bottom: 10px;
+        cursor: pointer;
+        z-index: 2;
+      }
+      main > span > svg {
+        color: #132043;
+      }
+      main > span:nth-of-type(2) {
+        position: absolute;
+        left: 20px;
+        bottom: 10px;
+        cursor: pointer;
+        z-index: 2;
+      }
+      /* ************************ SEC1 ********************** */
+      main > section:nth-of-type(1) {
+        width: 100%;
+        height: 100vh;
+        background-color: #132043be;
+        position: fixed;
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+      main > section:nth-of-type(1) > div {
+        width: 300px;
+        height: 200px;
+        border-radius: 5px;
+        background-color: #fdf0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 10px;
+      }
+      main > section:nth-of-type(1) > div > input {
+        width: 80%;
+        height: 30px;
+        outline: none;
+      }
+      main > section:nth-of-type(1) > div > div {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      main > section:nth-of-type(1) > div > div > button {
+        border: none;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        background-color: #132043;
+        color: #fdf0f0;
+        font-size: 18px;
+        width: 100px;
+        height: 40px;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+      /* ****************************** SEC2 ************************** */
+      main > section:nth-of-type(2) {
+        width: 80%;
+        height: 100%;
+        background-color: #f1b4bb;
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 20px;
+      }
+      .divs {
+        width: 200px;
+        height: 200px;
+        background-color: #132043;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: wrap;
+        margin-right: 20px;
+        border-radius: 10px;
+        color: #fdf0f0;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 20px;
+      }
+      .divs > * {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      /* ******************************* SEC3 ***************************** */
+      main > section:nth-of-type(3) {
+        width: 100%;
+        height: 50vh;
+        background-color: #f1b4bb;
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+      }
+      main > section:nth-of-type(3) > div {
+        width: 18%;
+        height: 50px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        background-color: #fdf0f0;
+        margin-right: 20px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      main > section:nth-of-type(3) > div > h1 {
+        width: 90%;
+        height: 50px;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        color: #132043;
+      }
+      main > section:nth-of-type(3) > div > span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10%;
+        height: 50px;
+        /* border: 1px solid red; */
+        cursor: pointer;
+      }
+      main > section:nth-of-type(3) > div > p {
+        width: 100%;
+        height: 0px;
+        background-color: #fdf0f0;
+        color: #f1b4bb;
+        transition: 0.3s;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        opacity: 0;
+        padding: 10px;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <span id="plus">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="106"
+          height="106"
+          fill="currentColor"
+          class="bi bi-patch-plus-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zM8.5 6v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 1 0z"
+          />
+        </svg>
+      </span>
+      <span id="sort">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="106"
+          height="106"
+          fill="currentColor"
+          class="bi bi-sort-numeric-up-alt"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M11.36 7.098c-1.137 0-1.708-.657-1.762-1.278h1.004c.058.223.343.45.773.45.824 0 1.164-.829 1.133-1.856h-.059c-.148.39-.57.742-1.261.742-.91 0-1.72-.613-1.72-1.758 0-1.148.848-1.836 1.973-1.836 1.09 0 2.063.637 2.063 2.688 0 1.867-.723 2.848-2.145 2.848zm.062-2.735c.504 0 .933-.336.933-.972 0-.633-.398-1.008-.94-1.008-.52 0-.927.375-.927 1 0 .64.418.98.934.98z"
+          />
+          <path
+            d="M12.438 8.668V14H11.39V9.684h-.051l-1.211.859v-.969l1.262-.906h1.046zM4.5 13.5a.5.5 0 0 1-1 0V3.707L2.354 4.854a.5.5 0 1 1-.708-.708l2-1.999.007-.007a.498.498 0 0 1 .7.006l2 2a.5.5 0 1 1-.707.708L4.5 3.707V13.5z"
+          />
+        </svg>
+      </span>
+      <section id="sec1">
+        <div action="" onsubmit="sub(event)">
+          <input type="text" placeholder="name" id="inp1" />
+          <input type="text" placeholder="score" id="inp2" />
+          <div>
+            <button id="btn">submit</button>
+          </div>
+        </div>
+      </section>
+      <section id="sec2"></section>
+      <section id="sec3">
+        <div>
+          <h1>max of class</h1>
+          <span id="max">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              fill="currentColor"
+              class="bi bi-arrow-down-short"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
+              />
+            </svg>
+          </span>
+          <p data-status="off" id="maxp"></p>
+        </div>
+        <div>
+          <h1>falied students</h1>
+          <span id="fail">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              fill="currentColor"
+              class="bi bi-arrow-down-short"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
+              />
+            </svg>
+          </span>
+          <p data-status="off" id="falip"></p>
+        </div>
+        <div>
+          <h1>score more than 15</h1>
+          <span id="more15">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              fill="currentColor"
+              class="bi bi-arrow-down-short"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
+              />
+            </svg>
+          </span>
+          <p data-status="off" id="more15p"></p>
+        </div>
+        <div>
+          <h1>avrrage of class</h1>
+          <span id="avg">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              fill="currentColor"
+              class="bi bi-arrow-down-short"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8 4a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L7.5 10.293V4.5A.5.5 0 0 1 8 4z"
+              />
+            </svg>
+          </span>
+          <p data-status="off" id="avgp">hiu</p>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script>
+    // ***********************************sec1
+    flag = 0;
+    let _sec1 = document.getElementById("sec1");
+    document.getElementById("plus").addEventListener("click", () => {
+      if (flag % 2 == 0) {
+        _sec1.style.display = "flex";
+      }
+      flag++;
+      checkbtn();
+    });
+
+    //*************************************inputs
+    let _inp1 = document.getElementById("inp1");
+    let _inp2 = document.getElementById("inp2");
+    let inp1val = "";
+    let inp2val = "";
+
+    _inp1.addEventListener("input", () => {
+      inp1val = _inp1.value;
+      let x1 = inp1val.search(/[0-9]/);
+      if (x1 >= 0) {
+        _inp1.value = inp1val.substring(0, inp1val.length - 1);
+        // console.log( _inp1.value);
+      }
+    });
+    _inp2.addEventListener("input", () => {
+      inp2val = _inp2.value;
+      _inp2.value.search(/[a-z , آ-ی]/);
+      if (_inp2.value.search(/[a-z , آ-ی]/) >= 0) {
+        _inp2.value = _inp2.value.substring(0, _inp2.value.length - 1);
+      //  inp2val = inp2val.substring(0, inp2val.length - 1);
+      // console.log( _inp2.value);
+      }
+
+      checkbtn();
+    });
+
+    //********************************************** SORT ARRAY
+    let score = [];
+    let b = []
+    let a = []
+    let x = ''
+    let mydiv;
+    document.getElementById("sort").addEventListener("click", () => {
+      mydiv = document.querySelectorAll(
+        "main > section:nth-of-type(2) > div > p"
+      );
+      mydiv1 = document.querySelectorAll(
+        "main > section:nth-of-type(2) > div > div"
+      );
+      
+      mydiv.forEach((i,index) => {
+        b.push(i.getAttribute('data-s'))
+        a.push(i.innerText)
+        score.push(i.innerHTML); 
+        score.sort(function (a, b) {return a - b;}) 
+      });
+      console.log('b : '+b);
+      console.log('score : '+score);
+      console.log('a: '+ a);
+      score.forEach((i,index)=>{
+        mydiv[index].innerText = i
+      })
+      for( i = 0 ; i <score.length ; i++){
+          console.log("im score i"+score[i]);
+          for(j = 0 ; j < a.length ; j++){
+            console.log('my div j'+mydiv[j].getAttribute('data-s'));
+            console.log('im a[j]: ' + a[j]);
+            if( Number (score[i]) == Number (a[j])){
+              x = mydiv[j].getAttribute('data-s')
+              // console.log(x);
+              // console.log(mydiv[j]);
+            }
+            console.log(j);
+          }
+          mydiv1[i].innerHTML = x
+      }
+    });
+    // ****************************************** MAX ARRAY
+    document.getElementById("max").addEventListener("click", () => {
+      score = []
+      mydiv = document.querySelectorAll(
+        "main > section:nth-of-type(2) > div > p"
+      );
+      mydiv.forEach((i) => {
+        score.push(i.innerHTML);
+        score.sort(function (a, b) {
+          return b - a;
+        });
+        document.getElementById("maxp").innerHTML = score[0];
+      });
+    });
+    // ************************************************FAILED STUDENT
+   
+    let fi = 0
+    document.getElementById("fail").addEventListener("click", () => {
+      score = []
+      mydiv = document.querySelectorAll("main > section:nth-of-type(2) > div > p");
+      mydiv.forEach((i) => {
+        score.push(i.innerHTML);
+        });
+        score.filter(myfuncfail)
+        function myfuncfail(val){
+          if ( val < 10 ){
+            fi++
+          }
+        }
+        console.log(fi);
+        document.getElementById('falip').innerHTML = fi
+      
+    });
+    // ************************************************************** MORE THAN 15
+
+    document.getElementById('more15').addEventListener('click',()=>{
+      score = []
+      mydiv = document.querySelectorAll("main > section:nth-of-type(2) > div > p");
+      mydiv.forEach((i)=>{
+        score.push(i.innerHTML)
+      })
+
+        score.filter(myfunc15)
+        function myfunc15(val){
+        return val > 15
+      }
+      document.getElementById('more15p').innerHTML = score.filter(myfunc15)
+      console.log(score.filter(myfunc15));
+
+    })
+    // *************************************************************** AVRRAGE
+    let sum = 0
+    let i = 0
+    document.getElementById('avg').addEventListener('click',()=>{
+      score = []
+      mydiv = document.querySelectorAll("main > section:nth-of-type(2) > div > p");
+      mydiv.forEach((i)=>{
+        score.push(i.innerHTML)
+      })
+      for ( i = 0 ; i < score.length ; i++){
+        sum +=Number(score[i])  
+      }
+
+      document.getElementById('avgp').innerText = sum/i
+      
+    })
+    //***************************************************************btn
+
+    let _btn = document.getElementById("btn");
+    _btn.addEventListener("click", () => {
+      _inp1.value = "";
+      _inp2.value = "";
+      score = [];
+      _sec1.style.display = "none";
+      flag++;
+      let _divs = document.createElement("div");
+      _divs.classList.add("divs");
+      _divs.setAttribute("data-name", inp1val);
+      _divs.setAttribute("data-score", inp2val);
+      console.log(_divs.getAttribute("data-name"));
+      _divs.innerHTML = "<div> " + inp1val + "</div><p data-s ="+inp1val+"> " + inp2val + " </p>";
+      console.log(_inp2.value);
+      console.log(_inp1.value);
+      // _divs.innerHTML = "<div> " + _inp1.value + "</div><p> " + _inp2.value + " </p>";
+      document.getElementById("sec2").appendChild(_divs);
+    });
+
+    // *******************************ACCARDION SPAN
+
+    let _spn = document.querySelectorAll(
+      "main > section:nth-of-type(3) > div > span"
+    );
+    _spn.forEach((i) => {
+      let _p = i.nextElementSibling;
+      i.addEventListener("click", () => {
+        if (_p.getAttribute("data-status") == "off") {
+          i.nextElementSibling.setAttribute("data-status", "on");
+          i.nextElementSibling.style.height = "100px";
+          i.nextElementSibling.style.opacity = "1";
+        } else {
+          i.nextElementSibling.setAttribute("data-status", "off");
+          i.nextElementSibling.style.height = "0px";
+          i.nextElementSibling.style.opacity = "0";
+          score = []
+          fi = 0
+        }
+      });
+    });
+
+    //******************************CHECKBTN
+    function checkbtn() {
+      if (_inp1.value.length == 0 && _inp2.value.length == 0) {
+        _btn.setAttribute("disabled", true);
+        _btn.style.backgroundColor = "#7D7C7C";
+      } else {
+        _btn.removeAttribute("disabled");
+        _btn.style.backgroundColor = "#132043";
+      }
+    }
+  </script>
+</html>
